@@ -52,10 +52,23 @@ $hotels = [
 <body>
 
 <table>
+    <thead>
+        <tr>
+            <td>Hotel</td>
+            <td>Descrizione</td>
+            <td>Parchggio</td>
+            <td>Voto</td>
+            <td>Distanza dal centro</td>
+        </tr>
+    </thead>
     <tbody>
         <?php foreach ($hotels as $hotel) {?>
             <tr>
-                <td><?php echo $hotel['name'] ?></td>
+                <td><?php echo $hotel['name']?></td>
+                <td><?php echo $hotel['description']?></td>
+                <td><?php echo ($hotel['parking'] ? 'Sì' : 'No')?></td>
+                <td><?php echo $hotel['vote']?></td>
+                <td><?php echo $hotel['distance_to_center']?> km</td>
             </tr>
         <?php }?>
     </tbody>
