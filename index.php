@@ -44,6 +44,8 @@ $hotels = [
 questa parte riguarda l'invio del form. Il valore è true se all'invio la checkbox è spuntata, false se non lo è
 var_dump($has_parking); */
 
+$has_parking = isset($_GET['has_parking']) ? true : false;
+
 ?>
 
 <!DOCTYPE html>
@@ -75,33 +77,36 @@ var_dump($has_parking); */
                     <input type="submit" value="Filtra">
                 </form>
             </div>
-        </div>
 
-        <!-- tabella -->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Hotel</th>
-                    <th scope="col">Descrizione</th>
-                    <th scope="col" class="text-center">Parcheggio</th>
-                    <th scope="col" class="text-center">Voto</th>
-                    <th scope="col" class="text-center">Km dal centro</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php foreach ($hotels as $hotel) { ?>
+            <!-- tabella -->
+            <table class="table">
+                <thead>
                     <tr>
-                        <td><?php echo $hotel['name'] ?></td>
-                        <td><?php echo $hotel['description'] ?></td>
-                        <td class="text-center"><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
-                        <td class="text-center"><?php echo $hotel['vote'] ?></td>
-                        <td class="text-center"><?php echo $hotel['distance_to_center'] ?> km</td>
+                        <th scope="col">Hotel</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col" class="text-center">Parcheggio</th>
+                        <th scope="col" class="text-center">Voto</th>
+                        <th scope="col" class="text-center">Km dal centro</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-    </div>
-    </table>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($hotels as $hotel) {
+                        if ($hotel['parking'] == $has_parking) {
+                    ?>
+                            <tr>
+                                <td><?php echo $hotel['name'] ?></td>
+                                <td><?php echo $hotel['description'] ?></td>
+                                <td class="text-center"><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
+                                <td class="text-center"><?php echo $hotel['vote'] ?></td>
+                                <td class="text-center"><?php echo $hotel['distance_to_center'] ?> km</td>
+                            </tr>
+                    <?php } else {
+                        }
+                    } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
