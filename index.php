@@ -68,11 +68,15 @@ $hotels = [
         </thead>
 
         <tbody>
-            <tr>
-                <td><?php echo $hotels[0]['name'] ?></td>
-            </tr>
+            <?php foreach ($hotels as $hotel) { ?>
+                <tr>
+                    <td><?php echo $hotel['name'] ?></td>
+                    <td><?php echo $hotel['description'] ?></td>
+                </tr>
+            <?php } ?>
         </tbody>
     </table>
+
 
 
     <!-- bootstrap -->
