@@ -61,9 +61,9 @@ $hotels = [
             <tr>
                 <th scope="col">Hotel</th>
                 <th scope="col">Descrizione</th>
-                <th scope="col">parcheggio</th>
-                <th scope="col">Voto</th>
-                <th scope="col">Km dal centro</th>
+                <th scope="col" class="text-center">Parcheggio</th>
+                <th scope="col" class="text-center">Voto</th>
+                <th scope="col" class="text-center">Km dal centro</th>
             </tr>
         </thead>
 
@@ -72,7 +72,9 @@ $hotels = [
                 <tr>
                     <td><?php echo $hotel['name'] ?></td>
                     <td><?php echo $hotel['description'] ?></td>
-                    <td><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
+                    <td class="text-center"><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
+                    <td class="text-center"><?php echo $hotel['vote'] ?></td>
+                    <td class="text-center"><?php echo $hotel['distance_to_center'] ?> km</td>
                 </tr>
             <?php } ?>
         </tbody>
