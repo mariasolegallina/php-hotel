@@ -56,6 +56,24 @@ $hotels = [
 </head>
 
 <body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Hotel</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">parcheggio</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Km dal centro</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><?php echo $hotels[0]['name'] ?></td>
+            </tr>
+        </tbody>
+    </table>
+
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
