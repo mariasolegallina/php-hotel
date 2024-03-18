@@ -59,6 +59,23 @@ $hotels = [
     <div class="container my-3">
         <div class="bg-white rounded-2 p-5">
             <h1 class="fs-2 mb-4">Hotels disponibili</h1>
+
+            <!-- form parcheggio + voto -->
+            <form action="" method="$_GET">
+                <div class="row">
+                    <div class="col-3">
+                        <input type="checkbox" id="has_parking" name="has_parking">
+                        <label for="has_parking">con parcheggio</label>
+                    </div>
+                    <div class="col-3">
+                        <input type="text" id="vote" name="vote" placeholder="Con voto superiore a">
+                    </div>
+                    <div class="col-3"> <button type="submit" class="btn btn-primary">Filtra</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- tabella -->
             <table class="table">
                 <thead>
                     <tr>
