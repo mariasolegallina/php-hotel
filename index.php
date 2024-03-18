@@ -61,45 +61,43 @@ $hotels = [
             <h1 class="fs-2 mb-4">Hotels disponibili</h1>
 
             <!-- form parcheggio + voto -->
-            <form action="" method="$_GET">
-                <div class="row">
-                    <div class="col-3">
+            <div>
+                <form action="" method="$_GET">
+                    <div>
                         <input type="checkbox" id="has_parking" name="has_parking">
                         <label for="has_parking">con parcheggio</label>
                     </div>
-                    <div class="col-3">
-                        <input type="text" id="vote" name="vote" placeholder="Con voto superiore a">
-                    </div>
-                    <div class="col-3"> <button type="submit" class="btn btn-primary">Filtra</button>
-                    </div>
-                </div>
-            </form>
-
-            <!-- tabella -->
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Hotel</th>
-                        <th scope="col">Descrizione</th>
-                        <th scope="col" class="text-center">Parcheggio</th>
-                        <th scope="col" class="text-center">Voto</th>
-                        <th scope="col" class="text-center">Km dal centro</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <?php foreach ($hotels as $hotel) { ?>
-                        <tr>
-                            <td><?php echo $hotel['name'] ?></td>
-                            <td><?php echo $hotel['description'] ?></td>
-                            <td class="text-center"><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
-                            <td class="text-center"><?php echo $hotel['vote'] ?></td>
-                            <td class="text-center"><?php echo $hotel['distance_to_center'] ?> km</td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
+                    <input type="text" id="vote" name="vote" placeholder="Con voto superiore a">
+                    <input type="submit" value="Filtra">
+                </form>
+            </div>
         </div>
-        </table>
+
+        <!-- tabella -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Hotel</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col" class="text-center">Parcheggio</th>
+                    <th scope="col" class="text-center">Voto</th>
+                    <th scope="col" class="text-center">Km dal centro</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php foreach ($hotels as $hotel) { ?>
+                    <tr>
+                        <td><?php echo $hotel['name'] ?></td>
+                        <td><?php echo $hotel['description'] ?></td>
+                        <td class="text-center"><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
+                        <td class="text-center"><?php echo $hotel['vote'] ?></td>
+                        <td class="text-center"><?php echo $hotel['distance_to_center'] ?> km</td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+    </div>
+    </table>
     </div>
 
 
