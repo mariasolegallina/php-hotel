@@ -40,6 +40,10 @@ $hotels = [
 
 ];
 
+/* $has_parking = isset($_GET['has_parking']);
+questa parte riguarda l'invio del form. Il valore è true se all'invio la checkbox è spuntata, false se non lo è
+var_dump($has_parking); */
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +68,7 @@ $hotels = [
             <div>
                 <form action="" method="$_GET">
                     <div>
-                        <input type="checkbox" id="has_parking" name="has_parking">
+                        <input type="checkbox" id="has_parking" name="has_parking" value="selected">
                         <label for="has_parking">con parcheggio</label>
                     </div>
                     <input type="text" id="vote" name="vote" placeholder="Con voto superiore a">
