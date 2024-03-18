@@ -72,6 +72,7 @@ $hotels = [
                 <tr>
                     <td><?php echo $hotel['name'] ?></td>
                     <td><?php echo $hotel['description'] ?></td>
+                    <td><?php echo $hotel['parking'] ? 'Sì' : 'No' ?></td>
                 </tr>
             <?php } ?>
         </tbody>
