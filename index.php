@@ -92,7 +92,8 @@ $has_parking = isset($_GET['has_parking']) ? true : false;
 
                 <tbody>
                     <?php foreach ($hotels as $hotel) {
-                        if ($hotel['parking'] == $has_parking) {
+                        // se c'è il check 
+                        if ($hotel['parking'] === $has_parking || !$has_parking) {
                     ?>
                             <tr>
                                 <td><?php echo $hotel['name'] ?></td>
@@ -108,6 +109,47 @@ $has_parking = isset($_GET['has_parking']) ? true : false;
             </table>
         </div>
     </div>
+
+    <!-- prova semplificata
+         <?php
+            $sports = [
+                [
+                    'name' => 'calcio',
+                    'attrezzo' => 'palla'
+                ],
+                [
+                    'name' => 'tennis',
+                    'attrezzo' => 'racchetta',
+                ],
+                [
+                    'name' => 'biliardo',
+                    'attrezzo' => 'palla',
+                ],
+                [
+                    'name' => 'corsa',
+                    'attrezzo' => 'scarpe',
+                ]
+            ];
+
+            $attrezzo = $_GET['che_attrezzo'];
+            ?>
+
+    <form action="" method="GET">
+        <input type="text" name="che_attrezzo" placeholder="scrivi un attrezzo">
+        <button type="submit">Invia</button>
+    </form>
+
+    <ul>
+        <?php
+        foreach ($sports as $sport) {
+            if ($sport['attrezzo'] === $attrezzo || !$attrezzo) {
+        ?>
+                <li><strong><?php echo $sport['name'] ?></strong></li>
+                <li><?php echo $sport['attrezzo'] ?></li>
+        <?php } else {
+            }
+        } ?>
+    </ul> -->
 
 
     <!-- bootstrap -->
